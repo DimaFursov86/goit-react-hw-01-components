@@ -7,6 +7,9 @@ import SectionTwo from './components/Profile/section';
 import Statistics from './components/Statistics';
 import statisticalData from './statistical-data.json';
 import SectionThree from './components/Statistics/section';
+import TransactionHistory from './components/TransactionHistory';
+import transactions from './transactions.json';
+import SectionFour from './components/TransactionHistory/section';
 export default function App() {
   return (
     <div>
@@ -20,6 +23,9 @@ export default function App() {
         <Statistics title="Upload stats" stats={statisticalData} />
         <Statistics stats={statisticalData} />
       </SectionThree>
+      <SectionFour>
+        <TransactionHistory transactions={transactions} />
+      </SectionFour>
     </div>
   );
 }

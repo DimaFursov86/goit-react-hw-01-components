@@ -4,6 +4,8 @@
   background-color: rgb(194, 202, 209);
   padding: 100px;
   width: 300px;
+  align-items: center;
+  margin: 0 auto;
 }
 .profile {
   display: block;
