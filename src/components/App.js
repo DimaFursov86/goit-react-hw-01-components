@@ -3,13 +3,10 @@ import friends from '../friends.json';
 import Section from './Section/section';
 import Profile from './Profile';
 import user from '../user.json';
-// import SectionTwo from './Profile/section';
 import Statistics from './Statistics';
 import statisticalData from '../statistical-data.json';
-// import SectionThree from './Statistics/section';
 import TransactionHistory from './TransactionHistory';
 import transactions from '../transactions.json';
-// import SectionFour from './TransactionHistory/section';
 export default function App() {
   return (
     <div>
@@ -17,7 +14,13 @@ export default function App() {
         <FriendList friends={friends} />
       </Section>
       <Section>
-        <Profile user={user} />
+        <Profile
+          name={user.name}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
       </Section>
       <Section>
         <Statistics title="Upload stats" stats={statisticalData} />
