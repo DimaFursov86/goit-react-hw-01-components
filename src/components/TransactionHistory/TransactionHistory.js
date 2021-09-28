@@ -1,17 +1,10 @@
-import TransactionItem from './TransactionItem';
 import s from './TransactionStyle.module.css';
 import PropTypes from 'prop-types';
 export default function TransactionHistory({ transactions }) {
   return (
     <table className={s.transactionHistory}>
       <thead>
-        <tr
-          style={{
-            backgroundColor: 'rgb(153, 207, 238)',
-            color: '#fff',
-            textTransform: 'uppercase',
-          }}
-        >
+        <tr className={s.title}>
           <th className={s.borderTable}>Type</th>
           <th className={s.borderTable}>Amount</th>
           <th className={s.borderTable}>Currency</th>
@@ -19,13 +12,12 @@ export default function TransactionHistory({ transactions }) {
       </thead>
 
       <tbody>
-        {transactions.map(oneTransaction => (
-          <TransactionItem
-            key={oneTransaction.id}
-            type={oneTransaction.type}
-            amount={oneTransaction.amount}
-            currency={oneTransaction.currency}
-          />
+        {transactions.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <td className={s.borderTable}>{type}</td>
+            <td className={s.borderTable}>{amount}</td>
+            <td className={s.borderTable}>{currency}</td>
+          </tr>
         ))}
       </tbody>
     </table>
